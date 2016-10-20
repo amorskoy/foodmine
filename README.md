@@ -23,7 +23,7 @@ Cd into project dir
 
 # Outputs
 
-Top words: 
+## Top words:
 `...
 (you,280382)
 (not,285094)
@@ -48,7 +48,7 @@ Top words:
 (the,1628045)
 `
 
-Top users:
+## Top users:
 `...
 (Linda,296)
 (Chris,363)
@@ -58,7 +58,7 @@ Top users:
 (C. F. Hill "CFH",451)
 `
 
-Top items
+## Top items
 `....
 (B003B3OOPA,762)
 (B001RVFERK,763)
