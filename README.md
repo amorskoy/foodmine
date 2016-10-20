@@ -1,19 +1,27 @@
-Runners:
+# Test run
 
-Top active users
+Cd into project dir
+
+*sbt test*
+
+#Runners:
+
+Cd into project dir
+
+## Top active users
 
 *sbt "run-main foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv"*
 
-Top commented items
+## Top commented items
 
 *sbt "run-main foodmine.runner.CommentedItemsRunner ./src/test/resources/test.csv"*
 
-Top words used in comments
+## Top words used in comments
 
 *sbt "run-main foodmine.runner.TopWordsRunner ./src/test/resources/test.csv"*
 
 
-Outputs
+# Outputs
 
 Top words: 
 `...
