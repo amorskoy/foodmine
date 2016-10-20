@@ -10,7 +10,7 @@ import scala.io.Source
 
 class ActiveUsers(topCount: Int, filePath: String) {
     def run() = {
-        val iterator = Source.fromFile(filePath).getLines
+        val iterator = Source.fromFile(filePath).getLines.drop(1)
         val sg = new SpaceSaverSemigroup[String]
 
         iterator.map(process).map(SpaceSaver(2000,_)).reduce(sg.plus).topK(topCount)
