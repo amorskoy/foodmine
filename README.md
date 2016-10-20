@@ -13,7 +13,7 @@ sbt "run-main foodmine.runner.TopWordsRunner ./src/test/resources/test.csv"
 Outputs
 
 Top words: 
-...
+`...
 (you,280382)
 (not,285094)
 (was,307861)
@@ -35,24 +35,24 @@ Top words:
 (and,1228666)
 (I,1388076)
 (the,1628045)
-
+`
 
 Top users:
-....
+`...
 (Linda,296)
 (Chris,363)
 (Rebecca of Amazon "The Rebecca Review",368)
 (Gary Peterson,389)
 (O. Brown "Ms. O. Khannah-Brown",426)
 (C. F. Hill "CFH",451)
-
+`
 
 Top items
-....
+`....
 (B003B3OOPA,762)
 (B001RVFERK,763)
 (B005K4Q34S,763)
 (B002QWP8H0,766)
 (B006HYLW32,792)
 (B007JFMH8M,1149)
-
+`
