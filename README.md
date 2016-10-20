@@ -2,6 +2,7 @@
 
 Absolutely no input argument validation performed (like CSV file existence, format checks etc...)
 
+You need scala 2.11 and sbt (0.13.* preferrable) to work with this project
 
 # Test run
 
