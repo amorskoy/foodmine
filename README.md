@@ -2,7 +2,7 @@
 
 Cd into project dir
 
-*sbt test*
+**sbt test**
 
 #Runners:
 
@@ -10,15 +10,15 @@ Cd into project dir
 
 ## Top active users
 
-*sbt "run-main foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv"*
+**sbt "run-main foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv"**
 
 ## Top commented items
 
-*sbt "run-main foodmine.runner.CommentedItemsRunner ./src/test/resources/test.csv"*
+**sbt "run-main foodmine.runner.CommentedItemsRunner ./src/test/resources/test.csv"**
 
 ## Top words used in comments
 
-*sbt "run-main foodmine.runner.TopWordsRunner ./src/test/resources/test.csv"*
+**sbt "run-main foodmine.runner.TopWordsRunner ./src/test/resources/test.csv"**
 
 
 # Outputs
