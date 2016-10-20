@@ -1,3 +1,8 @@
+# FYI
+
+Absolutely no input argument validation performed (like CSV file existence, format checks etc...)
+
+
 # Test run
 
 Cd into project dir
