@@ -10,19 +10,21 @@ Cd into project dir
 
 **sbt test**
 
-# Deploy as java jar (need sbt-assembly plugin added to project/plugins.sbt)
+# Deploy as java jar
+
+You need sbt-assembly plugin added to project/plugins.sbt
 
 Cd into project dir
 
-** sbt assembly **
+**sbt assembly**
 
 Then you could run:
 
-** java -cp target/scala-2.11/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv **
+**java -cp target/scala-2.11/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv**
 
 To run in low memory mode:
 
-** java -Xms256m -Xmx384m -cp target/scala-2.11/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv **
+**java -Xms256m -Xmx384m -cp target/scala-2.11/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv**
 
 
 #Runners:
