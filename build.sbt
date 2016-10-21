@@ -4,6 +4,7 @@ version := "1.0"
 
 scalaVersion := "2.11.8"
 
+assemblyJarName in assembly := "foodmine.jar"
 
 libraryDependencies += "com.github.alexandrnikitin" %% "bloom-filter" % "0.4.1"
 
