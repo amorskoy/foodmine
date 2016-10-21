@@ -10,6 +10,16 @@ Cd into project dir
 
 **sbt test**
 
+# Deploy as java jar (need sbt-assembly plugin added to project/plugins.sbt)
+
+Cd into project dir
+
+** sbt assembly **
+
+Then you could run:
+
+** java -cp target/scala-2.11/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv **
+
 #Runners:
 
 Cd into project dir
