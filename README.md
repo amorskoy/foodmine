@@ -20,11 +20,11 @@ Cd into project dir
 
 Then you could run:
 
-**java -cp target/scala-2.11/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv**
+**java -cp dist/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv**
 
 To run in low memory mode:
 
-**java -Xms256m -Xmx384m -cp target/scala-2.11/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv**
+**java -Xms256m -Xmx384m -cp dist/foodmine.jar foodmine.runner.ActiveUsersRunner ./src/test/resources/test.csv**
 
 
 #Runners:
