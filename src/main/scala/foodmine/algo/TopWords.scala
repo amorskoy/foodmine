@@ -9,11 +9,17 @@ import scala.io.Source
 
 
 class TopWords(topCount: Int, filePath: String) {
+    // defines data size to be mapped into RAM for multi-core processing
+    val GROUP_SIZE = 1000
+
     def run() = {
         val iterator = Source.fromFile(filePath).getLines.drop(1)
         val sg = new SpaceSaverSemigroup[String]
 
-        iterator.flatMap(process).map(SpaceSaver(2000,_)).reduce(sg.plus).topK(topCount)
+        iterator.grouped(GROUP_SIZE)
+            .map(g => g.par.flatMap(process).map(SpaceSaver(2000,_)).reduce(sg.plus))
+            .reduce(sg.plus)
+            .topK(topCount)
     }
 
 
