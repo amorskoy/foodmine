@@ -27,7 +27,7 @@ class TopWords(topCount: Int, filePath: String) {
     private def process(line: String) = {
         val arr = new CSVParser(new StringReader(line), CSVFormat.DEFAULT).getRecords.get(0)
 
-        arr.get(9).split(" ")
+        arr.get(9).replaceAll("\\p{Punct}", "").split(" ")
     }
 
     def getStopWords() = {
