@@ -10,7 +10,7 @@ import scala.io.Source
 
 class TopWords(topCount: Int, filePath: String) {
     // defines data size to be mapped into RAM for multi-core processing
-    val GROUP_SIZE = 1000
+    val GROUP_SIZE = 100
 
     def run() = {
         val iterator = Source.fromFile(filePath).getLines.drop(1)
