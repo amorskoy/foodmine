@@ -4,6 +4,29 @@ Absolutely no input argument validation performed (like CSV file existence, form
 
 You need scala 2.11 and sbt (0.13.* preferrable) to work with this project
 
+Monitor CPU cores usage percantage per core:
+
+**ps -p $PID -L -o pid,tid,psr,pcpu**
+
+Other way is to use **perf stat** from linux-tools-3.16:
+
+**perf stat java -cp dist/foodmine.jar foodmine.runner.TopWordsRunner $IN_FILE**
+
+Single Core output sample:
+
+```
+       67617.755084      task-clock (msec)         #    1.060 CPUs utilized
+       63.790462429 seconds time elapsed
+```
+
+Muli Core ouptut sample:
+
+```
+     189717.171395      task-clock (msec)         #    2.392 CPUs utilized
+     79.322083758 seconds time elapsed
+```
+
+
 # Test run
 
 Cd into project dir
