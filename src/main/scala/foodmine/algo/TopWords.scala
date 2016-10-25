@@ -1,6 +1,6 @@
 package foodmine.algo
 
-import java.io.StringReader
+import java.io.{InputStream, StringReader}
 
 import com.twitter.algebird.{SpaceSaver, SpaceSaverSemigroup}
 import org.apache.commons.csv.{CSVFormat, CSVParser}
@@ -15,9 +15,10 @@ class TopWords(topCount: Int, filePath: String) {
     def run() = {
         val iterator = Source.fromFile(filePath).getLines.drop(1)
         val sg = new SpaceSaverSemigroup[String]
+        val stopWords = getStopWords()
 
         iterator.grouped(GROUP_SIZE)
-            .map(g => g.par.flatMap(process).map(SpaceSaver(2000,_)).reduce(sg.plus))
+            .map(g => g.par.flatMap(process).filterNot(isStopWord(_, stopWords)).map(SpaceSaver(2000,_)).reduce(sg.plus))
             .reduce(sg.plus)
             .topK(topCount)
     }
@@ -26,6 +27,16 @@ class TopWords(topCount: Int, filePath: String) {
     private def process(line: String) = {
         val arr = new CSVParser(new StringReader(line), CSVFormat.DEFAULT).getRecords.get(0)
 
-        arr.get(9).split(" ")
+        arr.get(9).replaceAll("\\p{Punct}", "").split(" ")
     }
+
+    def getStopWords() = {
+        val stream : InputStream = getClass.getResourceAsStream("/english.stop.txt")
+        val lines = scala.io.Source.fromInputStream( stream ).getLines
+
+        lines.map(w => (w,1)).toMap
+    }
+
+    def isStopWord(word:String, stopWords:Map[String, Int]) = stopWords.contains(word.toLowerCase)
+
 }
